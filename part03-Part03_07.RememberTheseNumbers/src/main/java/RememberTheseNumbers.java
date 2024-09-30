@@ -16,6 +16,10 @@ public class RememberTheseNumbers {
 
             numbers.add(luku);
         }
+        
+        for (Integer number : numbers) {
+            System.out.println(number);
+        }
 
     }
 }
