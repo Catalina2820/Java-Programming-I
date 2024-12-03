@@ -33,4 +33,29 @@ public class SimpleDate {
         return false;
     }
 
+    public void advance(){
+        ++this.day;
+ 
+        if (this.day > 30) {
+            ++this.month;
+            this.day = 1;
+ 
+            if (this.month > 12) {
+                ++this.year;
+                this.month = 1;
+            }
+        }
+    }
+    
+    public void advance(int howManyDays){
+        for (int i = 0; i < howManyDays; i++) {
+            this.advance();
+        }
+    }
+    
+    public SimpleDate afterNumberOfDays(int days){
+        SimpleDate date1 = new SimpleDate(this.day, this.month, this.year);
+        date1.advance(days);
+        return date1;
+    }
 }
